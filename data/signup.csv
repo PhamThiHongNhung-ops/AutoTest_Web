@@ -1,0 +1,8 @@
+testcase,name,email,phone,password,result
+Đăng ký thành công,AutomationTest,autotest,0123456789,12345678a@A,Đăng ký thành công
+Đăng ký không thành công do không nhập trường Họ tên,,autotest,0123456789,12345678a@A,Họ tên không được để trống
+Đăng ký không thành công do không nhập trường Email,Automation test,,0123456789,12345678a@A,Email không được để trống
+Đăng ký không thành công do không nhập trường Số điện thoại,Automation test,autotest,,12345678a@A,Số điện thoai không được để trống
+Đăng ký không thành công do không nhập trường Mật khẩu,Automation test,autotest,0123456789,,Mật khẩu không được để trống
+Đăng ký không thành công do nhập không đúng định dạng email,Automation test,autotest,0123456789,12345678a@A,Please include an '@' in the email address. 'autotest' is missing an '@'.
+Đăng ký không thành công do nhập không đúng định dạng Số điện thoại,Automation test,autotest,autotest,12345678a@A,Please match the requested format.

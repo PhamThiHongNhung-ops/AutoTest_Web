@@ -1,0 +1,6 @@
+testcase,email,password,result
+Đăng nhập thành công,123@gmail.com,123456aA@,Đăng nhập thành công
+Đăng nhập không thành công do không trường email,,123456aA@,Email không được để trống
+Đăng nhập không thành công do Email sai định dạng,,123456aA@,Email không được để trống
+Đăng nhập không thành công do không trường Mật khẩu,123@gmail.com,,Mật khẩu không được để trống
+Đăng nhập không thành công do Mật khẩu sai định dạng,123@gmail.com,123,Mật khẩu có dài tối thiểu là 8 ký tự
