@@ -8,13 +8,20 @@ public class LoginSteps {
 
     LoginPage page;
 
+    public void login(String username, String password) {
+    	openPage();
+    	enterEmail(username);
+    	enterPassword(password);
+    	clickLoginButton();
+    }
+    
     @Step
 	public void openPage() {
 		page.open();
 		
 	}
 
-
+   
 
     @Step
 	public void enterEmail(String email) {
