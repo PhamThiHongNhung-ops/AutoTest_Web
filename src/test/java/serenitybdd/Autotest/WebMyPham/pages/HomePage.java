@@ -77,4 +77,6 @@ public class HomePage extends PageObject {
 		return s.equalsIgnoreCase(result);
 	}
 
+	
+
 }

@@ -1,2 +1,5 @@
 testcase,product,result
 Tìm kiếm chính xác sản phẩm,Kem Lót SilkyGirl Instant Pore Fix Primer 01 Natural,sucess
+Tìm kiếm với chữ thường,kem lót silkygirl instant pore fix primer 01 natural,sucess
+Tìm kiếm với chữ hoa,KEM LÓT SILKYGIRL INSTANT PORE FIX PRIMER 01 NATURAL,sucess
+Kiểm tra nhập khoảng trắng đầu cuối vào chuỗi tìm kiếm,         Kem Lót SilkyGirl Instant Pore Fix Primer 01 Natural           ,sucess

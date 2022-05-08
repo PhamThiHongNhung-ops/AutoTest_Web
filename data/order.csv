@@ -1,0 +1,9 @@
+testcase,name,email,phone,address,method,note,result
+Đặt hàng thành công khi nhập đầy đủ các trường,Test Automation,test@gmail.com,0123456789,số nhà 123,Thanh toán khi nhận hàng,Ghi chú,success
+Đặt hàng thành công khi nhập các trường bắt buộc,Test Automation,test@gmail.com,0123456789,số nhà 123,Thanh toán khi nhận hàng,,success
+Đặt hàng không thành công khi không nhập trường Họ tên,,test@gmail.com,0123456789,số nhà 123,Thanh toán khi nhận hàng,Ghi chú,Please fill out this field.
+Đặt hàng không thành công khi không nhập trường Email,Test Automation,,0123456789,số nhà 123,Thanh toán khi nhận hàng,Ghi chú,Please fill out this field.
+Đặt hàng không thành công khi nhập trường Email không đúng định dạng,Test Automation,test,0123456789,số nhà 123,Thanh toán khi nhận hàng,Ghi chú,Please include an '@' in the email address. 'test' is missing an '@'.
+Đặt hàng không thành công khi không nhập trường Số điện thoại,Test Automation,test@gmail.com,,số nhà 123,Thanh toán khi nhận hàng,Ghi chú,Please fill out this field.
+Đặt hàng không thành công khi nhập trường Số điện thoại không đúng định dạng,Test Automation,test@gmail.com,abc,số nhà 123,Thanh toán khi nhận hàng,Ghi chú,Please match the requested format.
+Đặt hàng không thành công khi không nhập trường Địa chỉ,Test Automation,test@gmail.com,0123456789,,Thanh toán khi nhận hàng,Ghi chú,Please fill out this field.

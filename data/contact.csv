@@ -1,0 +1,7 @@
+testcase,name,email,content,result
+Gửi liên hệ thành công khi không đăng nhập,Test Automation,test@gmail.com,Nội dung,success
+Gửi liên hệ thành công khi đăng nhập,Test Automation,test@gmail.com,Nội dung,success
+Gửi liên hệ không thành công khi không nhập trường Họ tên,,test@gmail.com,Nội dung,Please fill out this field.
+Gửi liên hệ không thành công khi không nhập trường Email,Test Automation,,Nội dung,Please fill out this field.
+Gửi liên hệ không thành công khi không nhập trường Nội dung,Test Automation,test@gmail.com,,Please fill out this field.
+Gửi liên hệ không thành công khi nhập trường Email không đúng định dạng,Test Automation,test,Nội dung,Please include an '@' in the email address. 'test' is missing an '@'.

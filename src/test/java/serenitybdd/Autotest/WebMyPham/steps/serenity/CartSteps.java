@@ -1,7 +1,6 @@
 package serenitybdd.Autotest.WebMyPham.steps.serenity;
 
 import serenitybdd.Autotest.WebMyPham.pages.CartPage;
-import serenitybdd.Autotest.WebMyPham.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
 import static org.junit.Assert.assertTrue;
 
@@ -27,6 +26,11 @@ public class CartSteps {
     @Step
 	public void check_add_product_to_cart_success(String s) {
 		assertTrue(page.check_add_product_to_cart_success(s));
+		
+	}
+    @Step
+	public void click_payment_button() {
+		page.click_payment_button();
 		
 	}
 

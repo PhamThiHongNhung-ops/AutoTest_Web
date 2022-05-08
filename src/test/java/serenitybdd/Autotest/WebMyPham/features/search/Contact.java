@@ -13,19 +13,19 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
+import serenitybdd.Autotest.WebMyPham.steps.serenity.ContactSteps;
 import serenitybdd.Autotest.WebMyPham.steps.serenity.LoginSteps;
-import serenitybdd.Autotest.WebMyPham.steps.serenity.SearchSteps;
 
 @RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom("data/search.csv")
+@UseTestDataFrom("data/contact.csv")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Search {
+public class Contact {
 
 	@Managed(uniqueSession = true, clearCookies = ClearCookiesPolicy.Never)
 	public WebDriver webdriver;
 
-	String testcase,product,result;
-	
+	String testcase, name, email, content, result;
+
 	@Qualifier
 	public String qualifier() {
 		return this.testcase;
@@ -33,23 +33,32 @@ public class Search {
 
 	@Steps
 	public LoginSteps login;
-	
+
 	@Steps
-	public SearchSteps search;
+	public ContactSteps contact;
 
 	@Test
-    public void SearchTestcase() {
+	public void ContactTestcase() {
 		EnvironmentVariables variable = SystemEnvironmentVariables.createEnvironmentVariables();
 		String username = variable.getProperty("project.username");
 		String password = variable.getProperty("project.password");
-		login.login(username, password);
-		search_product(product);
-		search.check_search_success();
-    }
-
-	public void search_product(String productName) {
-		search.enter_search_texbox(productName);
-		search.click_search_button();
-	
+		if (testcase.equals("Gửi liên hệ thành công khi đăng nhập")) {
+			login.login(username, password);
+		}
+		contact.open_page();
+		contact.enter_name(name);
+		contact.enter_email(email);
+		contact.enter_content(content);
+		contact.click_submit_button();
+		if(result.equals("success")) {
+			contact.check_send_contact_success();
+		} else if(name.equalsIgnoreCase("")) {
+			contact.check_name_fail(result);
+		} else if(email.equalsIgnoreCase("")) {
+			contact.check_email_fail(result);
+		}else if(content.equalsIgnoreCase("")) {
+			contact.check_content_fail(result);
+		}
 	}
+
 }

@@ -2,7 +2,6 @@ package serenitybdd.Autotest.WebMyPham.pages;
 
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -32,6 +31,13 @@ public class CartPage extends PageObject {
 	public boolean check_add_product_to_cart_success(String s) {
 		
 		return getDriver().findElement(By.xpath("//div[contains(@class,'simpleCart_items')]//*[contains(text(),'"+s+"')]")).isDisplayed();
+		
+	}
+
+	@FindBy(xpath="//button[@title='Tiến hành thanh toán']")
+    private WebElementFacade buttonPayment;
+	public void click_payment_button() {
+		buttonPayment.click();
 		
 	}
 

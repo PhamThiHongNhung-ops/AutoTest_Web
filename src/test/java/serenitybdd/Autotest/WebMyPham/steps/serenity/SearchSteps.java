@@ -20,8 +20,8 @@ public class SearchSteps {
 		
 	}
     @Step
-	public void check_search_success(String product) {
-		assertTrue(page.check_search_success(product));
+	public void check_search_success() {
+		assertTrue(page.check_search_success());
 		
 	}
 

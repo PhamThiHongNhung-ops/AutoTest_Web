@@ -4,14 +4,10 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
-import serenitybdd.Autotest.WebMyPham.common.Util;
 
 @DefaultUrl("")
 public class SearchPage extends PageObject {
@@ -33,7 +29,7 @@ public class SearchPage extends PageObject {
 
 	@FindBy(xpath = "//div[@id='allproduct']//div[@class='simpleCart_shelfItem item_product_main']")
 	private List<WebElementFacade> listProduct;
-	public boolean check_search_success(String product) {		
+	public boolean check_search_success() {		
 		return listProduct.size()==1;
 	}
 
