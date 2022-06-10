@@ -1,7 +1,14 @@
 package serenitybdd.Autotest.WebMyPham.pages;
 
 import net.thucydides.core.annotations.DefaultUrl;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.annotations.findby.FindBy;
@@ -130,17 +137,20 @@ public class OrderPage extends PageObject {
 	@FindBy(xpath="//button[contains(text(),'Lưu')]")
     private WebElementFacade buttonSave;
 	public void click_save_button() {
-//		buttonSave.click();
-		Util.clickElementFacade(getDriver(), buttonSave);
+		buttonSave.click();
 	}
+	
+
 
 	
 	public void click_cancel_popup() {
+		buttonSave.click();
 		getDriver().switchTo().alert().dismiss();
 		
 	}
 
 	public void click_OK_popup() {
+		buttonSave.click();
 		getDriver().switchTo().alert().accept();
 		
 	}

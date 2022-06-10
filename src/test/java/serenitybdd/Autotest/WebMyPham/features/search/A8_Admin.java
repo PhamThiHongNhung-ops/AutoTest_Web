@@ -4,6 +4,7 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.ClearCookiesPolicy;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.annotations.WithTagValuesOf;
 import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.util.SystemEnvironmentVariables;
 import net.thucydides.junit.annotations.Qualifier;
@@ -19,7 +20,8 @@ import serenitybdd.Autotest.WebMyPham.steps.serenity.LoginSteps;
 
 @RunWith(SerenityRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Admin {
+@WithTagValuesOf("function:admin")
+public class A8_Admin {
 
 	@Managed(uniqueSession = true, clearCookies = ClearCookiesPolicy.Never)
 	public WebDriver webdriver;

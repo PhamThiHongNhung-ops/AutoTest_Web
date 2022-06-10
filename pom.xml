@@ -13,7 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <serenity.version>1.8.3</serenity.version>
-        <webdriver.driver>firefox</webdriver.driver>
+        <webdriver.driver>chrome</webdriver.driver>
     </properties>
 
     <repositories>
@@ -62,6 +62,12 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>3.0.0</version>
+			<scope>test</scope>
+		</dependency>
     </dependencies>
     <build>
         <plugins>
@@ -78,10 +84,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/Test*.java</include>
-                        <include>**/When*.java</include>
-                        <include>**/*Story.java</include>
+                        <include>**/*features*/**</include>
                     </includes>
                     <argLine>-Xmx512m</argLine>
                     <systemPropertyVariables>

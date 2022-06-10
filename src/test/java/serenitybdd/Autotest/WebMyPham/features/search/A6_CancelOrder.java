@@ -4,8 +4,11 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.ClearCookiesPolicy;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.annotations.WithTagValuesOf;
 import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.util.SystemEnvironmentVariables;
+
+import static org.junit.Assert.assertTrue;
 
 import java.sql.Driver;
 
@@ -17,6 +20,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 import serenitybdd.Autotest.WebMyPham.common.Util;
 import serenitybdd.Autotest.WebMyPham.steps.serenity.CartSteps;
 import serenitybdd.Autotest.WebMyPham.steps.serenity.LoginSteps;
@@ -24,6 +29,7 @@ import serenitybdd.Autotest.WebMyPham.steps.serenity.OrderSteps;
 
 @RunWith(SerenityRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@WithTagValuesOf("function:cancelorder")
 public class CancelOrder {
 
 	@Managed(uniqueSession = true, clearCookies = ClearCookiesPolicy.Never)
@@ -72,28 +78,15 @@ public class CancelOrder {
 	public void CancelOrder3_unsucessful_click_cancel_in_popup() {
 		order.click_cancel_order();
 		order.enter_reason("Hủy");
-		order.click_save_button();
-//		order.click_save_button();
-		Util.pause(3000);
-//		WebDriverWait wait = new WebDriverWait(webdriver, 10);
-//	    wait.until(ExpectedConditions.alertIsPresent());
 		order.click_cancel_popup();
-//		Util.pause(2000);
-		order.click_cancel_icon();
-//		Util.pause(2000);
-//		order.check_cancel_order_fail();
+		order.click_cancel_button();
+		order.check_cancel_order_fail();
 	}
 	
 	@Test
 	public void CancelOrder4_sucessful() {
-//		webdriver.navigate().refresh();
 		order.click_cancel_order();
 		order.enter_reason("Hủy");
-		order.click_save_button();
-		order.click_save_button();
-		Util.pause(10000);
-//		WebDriverWait wait = new WebDriverWait(webdriver, 5);
-//	    wait.until(ExpectedConditions.alertIsPresent());
 		order.click_OK_popup();
 		order.check_cancel_order_success();
 	}

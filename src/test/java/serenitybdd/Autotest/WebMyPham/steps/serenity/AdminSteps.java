@@ -9,7 +9,7 @@ public class AdminSteps {
 
     AdminPage page;
 
-    @Step
+    @Step("Mở trang Admin")
 	public void openPage() {
 		page.open();
 		

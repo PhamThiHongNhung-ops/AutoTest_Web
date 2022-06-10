@@ -4,6 +4,7 @@ import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.ClearCookiesPolicy;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.annotations.WithTagValuesOf;
 import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.util.SystemEnvironmentVariables;
 import net.thucydides.junit.annotations.UseTestDataFrom;
@@ -21,6 +22,7 @@ import serenitybdd.Autotest.WebMyPham.steps.serenity.OrderSteps;
 @RunWith(SerenityParameterizedRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @UseTestDataFrom(value="data/order.csv")
+@WithTagValuesOf("function:order")
 public class Order {
 
 	@Managed(uniqueSession = true, clearCookies = ClearCookiesPolicy.Never)

@@ -63,6 +63,12 @@ public class ContactPage extends PageObject {
 		System.out.println(s);
 		return s.equalsIgnoreCase(result);
 	}
+	
+//	public boolean test(String expect) {
+//		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+//		String s = (String) js.executeScript("return arguments[0].validationMessage;", inputName);
+//		return s.equals(expect);
+//	}
 
 	public boolean check_email_fail(String result) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) getDriver();

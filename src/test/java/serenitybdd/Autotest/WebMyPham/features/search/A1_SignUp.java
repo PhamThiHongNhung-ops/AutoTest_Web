@@ -4,6 +4,7 @@ import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.ClearCookiesPolicy;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.annotations.WithTagValuesOf;
 import net.thucydides.junit.annotations.Qualifier;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.FixMethodOrder;
@@ -18,7 +19,8 @@ import serenitybdd.Autotest.WebMyPham.steps.serenity.HomeSteps;
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom("data/signup.csv")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class SignUp {
+@WithTagValuesOf("function:signup")
+public class A1_SignUp {
 
 	@Managed(uniqueSession = true, clearCookies = ClearCookiesPolicy.Never)
 	public WebDriver webdriver;
